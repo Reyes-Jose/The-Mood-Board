@@ -1,0 +1,14 @@
+:root{
+    --sad1Background: black;
+    --sad1Button: #edab97;
+    --sad1Text: #fff3ec;
+    --sad1Headline:#fffffe;
+    --sad2BackGround: #16161a;
+    --sad2Button: #7f5af0;
+    --sad2Text: #fffffe;
+    --sad2Headline: #fffffe;
+    --happy1Background: #fef6e4;
+    --happy1Button: #f582ae;
+    --happy1Text: #172c66;
+    --happy1Headline: #001858;
+}
