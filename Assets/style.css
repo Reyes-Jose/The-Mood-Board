@@ -11,4 +11,18 @@
     --happy1Button: #f582ae;
     --happy1Text: #172c66;
     --happy1Headline: #001858;
+    --happy2Background: #fffffe;
+    --happy2Button: #ffd803;
+    --happy2Text: #2d334a;
+    --happy2Headline: #272343;
+    --relax1Background: #004643;
+    --relax1Button: #f9bc60;
+    --relax1Text:#abd1c6;
+    --relax1Headline: #fffffe;
+    --relax2Background:#E9E895;
+    --relax2Background:#caa652;
+    --relax2Background:#957248;
 }
+
+sad, happy, anger, relax
+
