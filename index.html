@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -15,25 +15,76 @@
     <title>The Mood Board</title>
 </head>
 <body>
-    <!--nav, jumbotron, div questions, div playlists-->
+    <!--start-page-->
     <div class="start-container">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+          </a>
+        </div>  
+      
+      
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Past
+            </a>
+      
+            <a class="navbar-item">
+              Present
+            </a>
+
+            <a class="navbar-item">
+              Future
+            </a>
+  
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero is-medium is-link">
+        <div class="hero-body">
+          <p class="title">
+            Medium hero
+          </p>
+          <p class="subtitle">
+            Medium subtitle
+          </p>
+        </div>
+      </section>
+
+      <form id="emotion-form">
+        <label for="user-sentence">
+          <input class="input is-large" type="text" placeholder="Penny for your thoughts" id="user-sentence">
+        </label>
+      </form>
         
     </div>
 
-    <div class="quiz-container">
-
-    </div>
-
     <div class="feelings-page">
-
+      <div>
+        <p>We're here for you.....add more</p>
+      </div>
+      <div>
+        <p>Click Below to Generate Playlist: </p>
+        <button class="button is-large">Large</button>
+      </div>
     </div>
     <div class="playlists-page">
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <script src="Assets/script.js"></script>
+  </body>
 
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="Assets/script.js"></script>
 </html>
