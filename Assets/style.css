@@ -28,3 +28,13 @@
 a.navbar-item:hover {
     background-color: white;
 }
+
+
+
+.feelings-page, .playlists-page{
+    display:none;
+}
+
+.feelings-page{
+    flex-direction: column;
+}
