@@ -6,62 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="Assets/style.css" />
+    <script src="https://kit.fontawesome.com/e84ea757da.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Assets/style.css" />
     <title>The Mood Board</title>
 </head>
 
 <body>
     <!--start-page-->
     <div class="start-container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-                </a>
+        <nav class="navbar navbar-menu" role="navigation" aria-label="dropdown navigation">
+            <div class="navbar-start">
+                <a class="navbar-item ">
+                    <i class="fa-solid fa-brain fa-2xl" id="beat1"></i>
+                </a>                  
             </div>
-
-
-
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item">
+        
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    <h1>The Mood Board</h1>
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item is-justify-content-center pl-6">
                         Past
                     </a>
-
-                    <a class="navbar-item">
+                    <a class="navbar-item is-justify-content-center pl-6" href="#user-sentence">
                         Present
                     </a>
-
-                    <a class="navbar-item">
+                    <a class="navbar-item is-justify-content-center pl-6">
                         Future
                     </a>
-
                 </div>
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
-
-                    </div>
-                </div>
+            </div>
+        
+            <div class="navbar-end">
+                <a class="navbar-item">
+                    <i class="fa-solid fa-heart fa-2xl" id="beat2"></i>
+                </a>                  
             </div>
         </nav>
 
-        <section class="hero is-medium is-link">
-            <div class="hero-body">
-                <p class="title">
-                    Medium hero
-                </p>
-                <p class="subtitle">
-                    Medium subtitle
-                </p>
-            </div>
-        </section>
+        <div class="columns is-gapless">
+
+            <figure class="image column is-half-mobile is-quarter-desktop">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+            </figure>
+
+            <section class="hero is-medium is-link column is-full-mobile is-half-desktop">
+                <div class="hero-body">
+                    <p class="title">
+                        Medium hero
+                    </p>
+                    <p class="subtitle">
+                        Medium subtitle
+                    </p>
+                </div>
+            </section>
+
+            <figure class="image column is-half-mobile is-quarter-desktp">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+            </figure>
+            
+        
+        </div>
 
         <form id="emotion-form">
             <label for="user-sentence">
-                <input class="input is-large" type="text" placeholder="Penny for your thoughts" id="user-sentence">
+                <input class="input is-large" type="text" placeholder="Penny for your thoughts..." id="user-sentence">
             </label>
             <button class="button is-large" type="submit" id="btnSubmit">Submit</button>
         </form>
