@@ -23,3 +23,8 @@
     --relax2Background:#caa652;
     --relax2Background:#957248;
 }
+
+/*disables bulma background-color on hover*/
+a.navbar-item:hover {
+    background-color: white;
+}
