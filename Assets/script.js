@@ -27,7 +27,6 @@ $(document).ready(function () {
             .then((response) =>
                 console.log(response.sentence));
         // console.log('response.sentence', response.sentence);
-        // const obj = response.json;
         const {
             anger,
             disgust,
