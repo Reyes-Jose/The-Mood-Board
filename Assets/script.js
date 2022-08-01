@@ -23,18 +23,32 @@ $(document).ready(function () {
         };
 
         fetch('https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions', options)
-            .then(response => response.json())
-            .then(response =>
-                console.log(response));
-        var data = response;
+            .then((response) => response.json())
+            .then((response) =>
+                console.log(response.sentence));
+        // console.log('response.sentence', response.sentence);
+        const {
+            anger,
+            disgust,
+            fear,
+            joy,
+            love,
+            noemo,
+            sadness,
+            surprise
+        } = response;
 
-        // iterate over the response object
-
-        const keys = Object.keys(data);
+        console.log(anger);
+        // Object.entries(sentence).forEach(([key, value]) => {
+        //     console.log(`${key} ${value}`);
+        // });
+        // Object.values(response.sentence).forEach(values => {
+        //     console.log(values, response.sentence[values]);
+        // });
 
         // print all keys
 
-        console.log(keys);
+        // console.log(keys);
 
         // keys.forEach((key, index)) => {
         //     console.log(`${key}: ${response[key]}`);
