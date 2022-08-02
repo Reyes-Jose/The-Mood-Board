@@ -2,9 +2,14 @@ $(document).ready(function () {
     var startPage = $(".start-container");
     var feelingsPage = $(".feelings-page");
     var playlistPage = $(".playlists-page");
+    var pastPage = $(".past-page");
+    var futurePage = $(".future-page");
     var emotionForm1 = $("#emotion-form1");
     var btnContainer = $(".btn-container");
     var form2Container = $(".form2-container");
+    var pastDropdown = $(".past");
+    var futureDropdown = $(".future");
+    var refreshBtn = $(".refresh");
 
     let results = {};
     let userSentence1 = "";
@@ -81,9 +86,12 @@ $(document).ready(function () {
         feelingsPage.css('display', 'flex');
         startPage.css('display', 'none');
         playlistPage.css('display', 'none');
+        pastPage.css('display', 'none');
+        futurePage.css('display', 'none');
     }
 
     function userDecision(event) {
+
         var userChoice = $(event.target)
         console.log($(userChoice).html());
         if ($(userChoice).html() === 'Yes') {
@@ -112,8 +120,41 @@ $(document).ready(function () {
 
         }
     }
+    function playListColors() {
 
 
+        var choiceEl = $('<p>').text('Choose your colors');
+
+
+
+        var button3 = $('<button>').addClass('button is-medium').text('submit').attr({
+            type: 'button',
+            id: 'color1',
+        });
+
+
+        playlistPage.append(choiceEl);
+        playlistPage.append(button3);
+
+        console.log(choiceEl);
+
+
+    }
+
+    function displayPast() {
+        startPage.css('display', 'none');
+        feelingsPage.css('display', 'none');
+        playlistPage.css('display', 'none');
+        pastPage.css('display', 'flex');
+        futurePage.css('display', 'none');
+    }
+    function displayFuture() {
+        startPage.css('display', 'none');
+        feelingsPage.css('display', 'none');
+        playlistPage.css('display', 'none');
+        pastPage.css('display', 'none');
+        futurePage.css('display', 'flex');
+    }
 
     function searchSpotify(emotion) {
 
@@ -140,6 +181,11 @@ $(document).ready(function () {
     //     event.preventDefault();
     //     console.log("hello");
     // });
+    pastDropdown.on('click', displayPast);
+    futureDropdown.on('click', displayFuture);
+    refreshBtn.on('click', function () {
+        location.reload();
+    })
 
     emotionForm1.on('submit', searchEmotion);
 
@@ -165,8 +211,11 @@ $(document).ready(function () {
 
     });
 
-    btnContainer.on("click", userDecision);
 
+
+
+    btnContainer.on("click", userDecision);
+    playListColors();
 
 
 })

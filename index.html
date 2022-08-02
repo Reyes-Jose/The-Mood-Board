@@ -26,13 +26,13 @@
                     <h1>The Mood Board</h1>
                 </a>
                 <div class="navbar-dropdown">
-                    <a class="navbar-item is-justify-content-center pl-6">
+                    <a class="past navbar-item is-justify-content-center pl-6">
                         Past
                     </a>
-                    <a class="navbar-item is-justify-content-center pl-6" href="#user-sentence">
+                    <a class="navbar-item is-justify-content-center pl-6" href="#user-sentence1">
                         Present
                     </a>
-                    <a class="navbar-item is-justify-content-center pl-6">
+                    <a class="future navbar-item is-justify-content-center pl-6">
                         Future
                     </a>
                 </div>
@@ -66,18 +66,24 @@
                 <img src="https://bulma.io/images/placeholders/128x128.png">
             </figure>
             
-        
         </div>
 
         <form id="emotion-form1">
-            <label for="user-sentence1">
-                <input class="input is-large" type="text" placeholder="Penny for your thoughts..." id="user-sentence1">
-            </label>
-            <button class="button is-large" type="submit" id="btnSubmit">Submit</button>
+            <div class="columns">
+                <label for="user-sentence1" class="column is-four-fifths">
+                    <input class="input is-large" type="text" placeholder="Penny for your thoughts..." id="user-sentence1">
+                </label>
+            <button class="button is-large column btnSubmit" type="submit" id="btnSubmit">Submit</button>
+            </div>
         </form>
 
-        
-        
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p>
+                <strong>The MoodBoard</strong> by The Go GITers 2022. AKA <a href="https://github.com/iamjoyfulgirl">Sherri Knight</a>, <a href="https://github.com/Reyes-Jose">Jose Reyes</a> and <a href="https://github.com/savannahfausto">Savannah Fausto</a>.
+              </p>
+            </div>
+          </footer>
 
     </div>
 
@@ -97,8 +103,21 @@
             
         </div>
     </div>
+
     <div class="playlists-page">
 
+    </div>
+    <div class="past-page">
+    
+        <div class="columns">
+
+        </div>
+        <button class="button is-small refresh" id="refresh">Return Home</button>
+    </div>
+    <div class ="future-page">
+        <h2>A Look into the Future:</h2>
+        <p>Here is what we plan to do....</p>
+        <button class="button is-small refresh" id="refresh">Return Home</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
