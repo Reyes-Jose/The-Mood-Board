@@ -38,7 +38,9 @@ a.navbar-item:hover {
     background-color: white;
 }
 
-.feelings-page, .playlists-page{
+
+
+.feelings-page, .playlists-page, .future-page, .past-page { 
     display:none;
 }
 
@@ -46,6 +48,14 @@ a.navbar-item:hover {
     flex-direction: column;
 }
 
+.btnSubmit {
+    margin-top: 12px;
+}
+
+.footer {
+    padding: 1rem 1.5rem 1rem;
+    margin-top: 1rem;
+}
 /*allows for the change of colors*/
 .sad1{
     --primaryBackground: var(--sad1Background);
