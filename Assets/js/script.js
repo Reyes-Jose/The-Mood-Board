@@ -1,4 +1,6 @@
+//will only run once the page is fully loaded
 $(document).ready(function () {
+    //declaring variables
     var startPage = $(".start-container");
     var pastPage = $(".past-page");
     var ulContainer = $("#list-container")
