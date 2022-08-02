@@ -6,8 +6,9 @@ $(document).ready(function () {
     var pastDropdown = $(".past");
     var futureDropdown = $(".future");
     var refreshBtn = $(".refresh");
-    var linkContainer = $(".link-container");
     var playlistLink = $("#hide");
+    var brainIcon = $('#beat1');
+    var heartIcon = $('#beat2');
 
     let results = {};
     let playlistId = "";
@@ -90,6 +91,8 @@ $(document).ready(function () {
         startPage.css('display', 'none');
         pastPage.css('display', 'none');
         futurePage.css('display', 'flex');
+
+        futurePage.addClass('is-flex is-flex-direction-column');
     }
 
     emotionForm1.on('submit', searchEmotion);
@@ -97,29 +100,32 @@ $(document).ready(function () {
 
 
     pastDropdown.on('click', displayPast);
+    brainIcon.on('click', displayPast);
     futureDropdown.on('click', displayFuture);
+    heartIcon.on('click', displayFuture);
+
     refreshBtn.on('click', function () {
         location.reload();
     })
 
 
     //on hover icons "beat"
-    $('#beat1').on('mouseover', function () {
+    brainIcon.on('mouseover', function () {
         var iconAnimation = $('#beat1');
         iconAnimation.addClass('fa-beat');
 
     });
-    $('#beat1').on('mouseout', function () {
+    brainIcon.on('mouseout', function () {
         var iconAnimation = $('#beat1');
         iconAnimation.removeClass('fa-beat');
 
     });
-    $('#beat2').on('mouseover', function () {
+    heartIcon.on('mouseover', function () {
         var iconAnimation = $('#beat2');
         iconAnimation.addClass('fa-beat');
 
     });
-    $('#beat2').on('mouseout', function () {
+    heartIcon.on('mouseout', function () {
         var iconAnimation = $('#beat2');
         iconAnimation.removeClass('fa-beat');
 

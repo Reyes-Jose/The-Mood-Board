@@ -116,4 +116,14 @@ body{
 
 .hide {
     display: none;
+    font-size: 3rem;
+    background-color: #485fc7;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px
 }
+
+.image {
+    min-height: 100%;
+}
+
