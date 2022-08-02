@@ -1,5 +1,5 @@
 :root{
-    --sad1Background: black;
+    --sad1Background: #000000;
     --sad1Button: #edab97;
     --sad1Text: #fff3ec;
     --sad1Headline:#fffffe;
@@ -20,8 +20,17 @@
     --relax1Text:#abd1c6;
     --relax1Headline: #fffffe;
     --relax2Background:#E9E895;
-    --relax2Background:#caa652;
-    --relax2Background:#957248;
+    --relax2Button:#caa652;
+    --relax2Text:#957248;
+    --relax2Headline:#fffffe;
+    --angry1Background: #AF0016;
+    --angry1Button: #FF581A;
+    --angry1Text: #000000;
+    --angry1Headline: #fffffe;
+    --angry2Background: #000000;
+    --angry2Button:#7f0000;
+    --angry2Text: #fffffe;
+    --angry2Headline: #fffffe; 
 }
 
 /*disables bulma background-color on hover*/
@@ -47,3 +56,66 @@ a.navbar-item:hover {
     padding: 1rem 1.5rem 1rem;
     margin-top: 1rem;
 }
+/*allows for the change of colors*/
+.sad1{
+    --primaryBackground: var(--sad1Background);
+    --primaryButton:var(--sad1Button);
+    --primaryText: var(--sad1Text);
+    --primaryHeadline: var(--sad1Headline);
+}
+
+.sad2{
+    --primaryBackground: var(--sad2BackGround);
+    --primaryButton:var(--sad2Button);
+    --primaryText: var(--sad2Text);
+    --primaryHeadline: var(--sad2Headline);
+}
+
+.happy1{
+    --primaryBackground: var(--happy1Background);
+    --primaryButton:var(--happy1Button);
+    --primaryText: var(--happy1Text);
+    --primaryHeadline: var(--happy1Headline)
+}
+
+.happy2{
+    --primaryBackground: var(--happy2Background);
+    --primaryButton:var(--happy2Button);
+    --primaryText: var(--happy2Text);
+    --primaryHeadline: var(--happy2Headline);
+}
+
+.relax1{
+    --primaryBackground: var(--relax1Background);
+    --primaryButton:var(--relax1Button);
+    --primaryText: var(--relax1Text);
+    --primaryHeadline: var(--relax1Headline);
+}
+
+.relax2{
+    --primaryBackground: var(--relax2Background);
+    --primaryButton:var(--relax2Button);
+    --primaryText: var(--relax2Text);
+    --primaryHeadline: var(--relax2Headline);
+}
+
+.angry1{
+    --primaryBackground: var(--angry1Background);
+    --primaryButton:var(--angry1Button);
+    --primaryText: var(--angry1Text);
+    --primaryHeadline: var(--angry1Headline);
+}
+
+.angry2{
+    --primaryBackground: var(--angry2Background);
+    --primaryButton:var(--angry2Button);
+    --primaryText: var(--angry2Text);
+    --primaryHeadline: var(--angry2Headline); 
+}
+
+/* will need to add default colors */
+body{
+    background-color: #fffffe;
+    color: #000000;    
+}
+

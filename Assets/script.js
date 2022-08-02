@@ -27,23 +27,23 @@ $(document).ready(function () {
             body: `{ "sentence": ${JSON.stringify(userSentence1)} }`
         };
 
-        fetch('https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions', options)
-            .then((response) => response.json())
-            .then((response) =>
-                console.log(response.sentence));
-        // console.log('response.sentence', response.sentence);
-        const {
-            anger,
-            disgust,
-            fear,
-            joy,
-            love,
-            noemo,
-            sadness,
-            surprise
-        } = response;
+        // fetch('https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions', options)
+        //     .then((response) => response.json())
+        //     .then((response) =>
+        //         console.log(response.sentence));
+        // // console.log('response.sentence', response.sentence);
+        // const {
+        //     anger,
+        //     disgust,
+        //     fear,
+        //     joy,
+        //     love,
+        //     noemo,
+        //     sadness,
+        //     surprise
+        // } = response;
 
-        console.log(anger);
+        // console.log(anger);
         // Object.entries(sentence).forEach(([key, value]) => {
         //     console.log(`${key} ${value}`);
         // });
@@ -75,6 +75,7 @@ $(document).ready(function () {
     }
 
     function userDecision(event) {
+
         var userChoice = $(event.target)
         console.log($(userChoice).html());
         if ($(userChoice).html() === 'Yes') {
@@ -103,20 +104,40 @@ $(document).ready(function () {
 
         }
     }
+    function playListColors() {
+
+
+        var choiceEl = $('<p>').text('Choose your colors');
+
+
+
+        var button3 = $('<button>').addClass('button is-medium').text('submit').attr({
+            type: 'button',
+            id: 'color1',
+        });
+
+
+        playlistPage.append(choiceEl);
+        playlistPage.append(button3);
+
+        console.log(choiceEl);
+
+
+    }
 
     function displayPast() {
-            startPage.css('display', 'none');
-            feelingsPage.css('display', 'none');
-            playlistPage.css('display', 'none');
-            pastPage.css('display', 'flex');
-            futurePage.css('display', 'none');
-        }
+        startPage.css('display', 'none');
+        feelingsPage.css('display', 'none');
+        playlistPage.css('display', 'none');
+        pastPage.css('display', 'flex');
+        futurePage.css('display', 'none');
+    }
     function displayFuture() {
         startPage.css('display', 'none');
         feelingsPage.css('display', 'none');
         playlistPage.css('display', 'none');
         pastPage.css('display', 'none');
-        futurePage.css('display', 'flex'); 
+        futurePage.css('display', 'flex');
     }
 
     // function searchSpotify(emotion) {
@@ -146,7 +167,7 @@ $(document).ready(function () {
     // });
     pastDropdown.on('click', displayPast);
     futureDropdown.on('click', displayFuture);
-    refreshBtn.on('click', function(){
+    refreshBtn.on('click', function () {
         location.reload();
     })
 
@@ -174,8 +195,11 @@ $(document).ready(function () {
 
     });
 
-    btnContainer.on("click", userDecision);
 
+
+
+    btnContainer.on("click", userDecision);
+    playListColors();
 
 
 })
