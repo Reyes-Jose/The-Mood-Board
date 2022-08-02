@@ -1,4 +1,47 @@
-:root{
+/* will need to add default colors */
+body{
+    background-color: #fffffe;
+    color: #000000;    
+}
+
+/*disables bulma background-color on hover*/
+a.navbar-item:hover {
+    background-color: white;
+}
+
+/*hides past and future page until user clicks on corresponding icon or dropdown menu*/
+.future-page, .past-page { 
+    display:none;
+}
+
+/*hides playlist link until it is functional*/
+.hide {
+    display: none;
+    font-size: 3rem;
+    background-color: #485fc7;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px
+}
+
+/*stayles images to equal height of hero*/
+.image {
+    min-height: 100%;
+}
+
+.btnSubmit {
+    margin-top: 12px;
+}
+
+.footer {
+    padding: 1rem 1.5rem 1rem;
+    margin-top: 1rem;
+}
+
+
+
+/*for future development to add color themes based on users emotion*/
+/* :root{
     --sad1Background: #000000;
     --sad1Button: #edab97;
     --sad1Text: #fff3ec;
@@ -31,27 +74,9 @@
     --angry2Button:#7f0000;
     --angry2Text: #fffffe;
     --angry2Headline: #fffffe; 
-}
-
-/*disables bulma background-color on hover*/
-a.navbar-item:hover {
-    background-color: white;
-}
-
- .future-page, .past-page { 
-    display:none;
-}
-
-
-.btnSubmit {
-    margin-top: 12px;
-}
-
-.footer {
-    padding: 1rem 1.5rem 1rem;
-    margin-top: 1rem;
-}
-/*allows for the change of colors*/
+    --futureBackground: url(Assets/images/pexels-karolina-grabowska-4498195.jpg);
+} */
+/* allows for the change of colors
 .sad1{
     --primaryBackground: var(--sad1Background);
     --primaryButton:var(--sad1Button);
@@ -106,24 +131,4 @@ a.navbar-item:hover {
     --primaryButton:var(--angry2Button);
     --primaryText: var(--angry2Text);
     --primaryHeadline: var(--angry2Headline); 
-}
-
-/* will need to add default colors */
-body{
-    background-color: #fffffe;
-    color: #000000;    
-}
-
-.hide {
-    display: none;
-    font-size: 3rem;
-    background-color: #485fc7;
-    color: white;
-    padding: 0 10px;
-    border-radius: 10px
-}
-
-.image {
-    min-height: 100%;
-}
-
+} */
