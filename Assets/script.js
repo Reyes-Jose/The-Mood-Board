@@ -2,9 +2,14 @@ $(document).ready(function () {
     var startPage = $(".start-container");
     var feelingsPage = $(".feelings-page");
     var playlistPage = $(".playlists-page");
+    var pastPage = $(".past-page");
+    var futurePage = $(".future-page");
     var emotionForm1 = $("#emotion-form1");
     var btnContainer = $(".btn-container");
     var form2Container = $(".form2-container");
+    var pastDropdown = $(".past");
+    var futureDropdown = $(".future");
+    var refreshBtn = $(".refresh");
 
 
 
@@ -65,6 +70,8 @@ $(document).ready(function () {
         feelingsPage.css('display', 'flex');
         startPage.css('display', 'none');
         playlistPage.css('display', 'none');
+        pastPage.css('display', 'none');
+        futurePage.css('display', 'none');
     }
 
     function userDecision(event) {
@@ -97,7 +104,20 @@ $(document).ready(function () {
         }
     }
 
-
+    function displayPast() {
+            startPage.css('display', 'none');
+            feelingsPage.css('display', 'none');
+            playlistPage.css('display', 'none');
+            pastPage.css('display', 'flex');
+            futurePage.css('display', 'none');
+        }
+    function displayFuture() {
+        startPage.css('display', 'none');
+        feelingsPage.css('display', 'none');
+        playlistPage.css('display', 'none');
+        pastPage.css('display', 'none');
+        futurePage.css('display', 'flex'); 
+    }
 
     // function searchSpotify(emotion) {
 
@@ -124,6 +144,11 @@ $(document).ready(function () {
     //     event.preventDefault();
     //     console.log("hello");
     // });
+    pastDropdown.on('click', displayPast);
+    futureDropdown.on('click', displayFuture);
+    refreshBtn.on('click', function(){
+        location.reload();
+    })
 
     emotionForm1.on('submit', searchEmotion);
 

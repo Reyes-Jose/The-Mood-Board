@@ -31,10 +31,19 @@ a.navbar-item:hover {
 
 
 
-.feelings-page, .playlists-page{
+.feelings-page, .playlists-page, .future-page, .past-page { 
     display:none;
 }
 
 .feelings-page{
     flex-direction: column;
+}
+
+.btnSubmit {
+    margin-top: 12px;
+}
+
+.footer {
+    padding: 1rem 1.5rem 1rem;
+    margin-top: 1rem;
 }
