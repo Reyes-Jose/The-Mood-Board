@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/e84ea757da.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./Assets/style.css" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
     <title>The Mood Board</title>
 </head>
 
@@ -48,22 +48,27 @@
         <div class="columns is-gapless">
 
             <figure class="image column is-half-mobile is-quarter-desktop">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+                <img src="./Assets/images/pexels-andrea-piacquadio-3807758 (1).jpg" class="image image-left">
             </figure>
 
             <section class="hero is-medium is-link column is-full-mobile is-half-desktop">
                 <div class="hero-body">
-                    <p class="title">
-                        Medium hero
+                    <p class="title has-text-centered">
+                        Welcome to the Mood Board
                     </p>
-                    <p class="subtitle">
-                        Medium subtitle
+                    <br>
+                    <br>
+                    <p class="subtitle has-text-centered">
+                        Here you will find an intersection between how you're feeling at the moment and a music playlist to match that feeling. 
+
+                        Below you will see a textbox. We invite you to express yourself in a sentence and submit away. 
+                        A link will then be generated. This link will take you to a spotify playlist that matches how you're feeling.
                     </p>
                 </div>
             </section>
 
-            <figure class="image column is-half-mobile is-quarter-desktp">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+            <figure class="image image-right column is-half-mobile is-quarter-desktp">
+                <img src="./Assets/images/pexels-karolina-grabowska-4498195.jpg" class="image image-right">
             </figure>
             
         </div>
@@ -77,7 +82,7 @@
             </div>
         </form>
 
-        <div class="feelings-page">
+        <div class="feelings-page is-flex is-justify-content-center m-3">
             <div class='link-container'>
                 <a class= "hide" id="hide">Click Me: Your Playlist Awaits</a>
             </div>
@@ -104,14 +109,100 @@
     </div>
 
     <div class ="future-page">
-        <h2>A Look into the Future:</h2>
-        <p>Here is what we plan to do....</p>
+        <h2 class="is-size-2 m-3">A Look into the Future:</h2>
+        <div class="box m-3 has-background-link">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                    <i class="fa-solid fa-lightbulb fa-2xl has-text-white"></i>
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p class="has-text-white">
+                    <strong class="has-text-white">Gauge User's Desired Mood</strong>
+                    <br>
+                    In the next version of our application, we would like to first ask the user how they are feeling.
+                    Then, we would like to ask the user if they want a playlist that matches this emotion, or if they
+                    would rather have a playlist recommended based on how the user would like to feel.
+                  </p>
+                </div>
+                
+              </div>
+            </article>
+        </div> 
+
+        <div class="box m-3 has-background-link">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                    <i class="fa-solid fa-lightbulb fa-2xl has-text-white"></i>
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p class="has-text-white">
+                    <strong class="has-text-white">Playlist to Generate on our Application</strong>
+                    <br>
+                    In the next version of our application, we would like to keep the user on our web 
+                    application and have them listen to the playlist directly on our site instead of
+                    being diverted to Spotify. This will hopefully make the user experience more personal.
+                  </p>
+                </div>
+                
+              </div>
+            </article>
+        </div>      
+
+        <div class="box m-3 has-background-link">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                    <i class="fa-solid fa-lightbulb fa-2xl has-text-white"></i>
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p class="has-text-white">
+                    <strong class="has-text-white">Add Color Themes to Playlist Page</strong>
+                    <br>
+                    Once we are able to display playlists on our website, we would like the user to be able to
+                    toggle between different color themes researched specifically to fit either their current or desired
+                    emotion.
+                  </p>
+                </div>
+                
+              </div>
+            </article>
+        </div>   
+
+        <div class="box m-3 has-background-link">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                    <i class="fa-solid fa-lightbulb fa-2xl has-text-white"></i>
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p class="has-text-white">
+                    <strong class="has-text-white">Add More Media for User to Choose From</strong>
+                    <br>
+                   Once we perfect the user experience with music as the main media source, we would then like to expand our 
+                   media sources into literature, movies, guided meditations and so on. 
+                  </p>
+                </div>
+                
+              </div>
+            </article>
+        </div>   
+        
         <button class="button is-small refresh" id="refresh">Return Home</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script src="Assets/script.js"></script>
+    <script src="./Assets/js/script.js"></script>
 </body>
 
 </html>
