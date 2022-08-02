@@ -167,9 +167,13 @@ $(document).ready(function () {
         };
 
         fetch(`https://spotify23.p.rapidapi.com/search/?q=${emotion}&type=playlists&offset=0&limit=10&numberOfTopResults=5`, options)
-            .then(response => response.json())
-            .then(response => {
-                console.log(response);
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                console.log('data', data);
+                var playlistId = data.playlists.items[0].data.uri.split(":")[2];
+                getPlaylistId(playlistId);
+                console.log('playlistId', playlistId);
                 // document.getElementById
             }
 
@@ -177,6 +181,20 @@ $(document).ready(function () {
             .catch(err => console.error(err));
     }
 
+    function getPlaylistId(playlistId) {
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '0a94bcc8f9msh196fd34b25fece6p19d338jsn0a9545969f74',
+                'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+            }
+        };
+
+        fetch('https://spotify23.p.rapidapi.com/playlist_tracks/?id=' + playlistId + '&offset=0&limit=100', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
     // emotionForm.on('submit', function (event) {
     //     event.preventDefault();
     //     console.log("hello");
