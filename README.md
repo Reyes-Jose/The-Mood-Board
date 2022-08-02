@@ -21,8 +21,7 @@ TODO
 - Bulma CSS Framework
 - Server-Side APIs
 
-[**Demo video**](https://drive.google.com/file/) 🔗 TODO
-SCREENSHOT TODO
+[**Demo video**](https://drive.google.com/file/d/1h-LnN2WvXX50bPuzyiTS4hE-2bfpQY3T/view) 🔗
 
 ## Project Requirements:
 
