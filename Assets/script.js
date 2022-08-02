@@ -11,11 +11,12 @@ $(document).ready(function () {
     var futureDropdown = $(".future");
     var refreshBtn = $(".refresh");
 
-
+    let results = {};
+    let userSentence1 = "";
 
     function searchEmotion(event) {
         event.preventDefault();
-        var userSentence1 = $("#user-sentence1").val();
+        userSentence1 = $("#user-sentence1").val();
         console.log(userSentence1);
         const options = {
             method: 'POST',
@@ -27,23 +28,38 @@ $(document).ready(function () {
             body: `{ "sentence": ${JSON.stringify(userSentence1)} }`
         };
 
-        // fetch('https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions', options)
-        //     .then((response) => response.json())
-        //     .then((response) =>
-        //         console.log(response.sentence));
-        // // console.log('response.sentence', response.sentence);
-        // const {
-        //     anger,
-        //     disgust,
-        //     fear,
-        //     joy,
-        //     love,
-        //     noemo,
-        //     sadness,
-        //     surprise
-        // } = response;
+        fetch('https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions', options)
+            .then((response) => response.json())
+            .then((data) => {
 
-        // console.log(anger);
+                console.log(data.sentence)
+                localStorage.setItem('results', JSON.stringify(data.sentence));
+                results = data.sentence
+                var topEmotion = "noemo";
+                for (let key in results) {
+                    if (results[key] > Number(results[topEmotion])) {
+                        topEmotion = key;
+                    }
+                }
+                console.log(topEmotion);
+                searchSpotify(topEmotion);
+                // const keys = Object.keys(results);
+                // console.log('results', results);
+                // const values = keys.map(key => {
+                //     return results[key];
+                // });
+                // console.log('values', values);
+                // var maxVal = Math.max.apply(null, values);
+                // console.log('maxVal', maxVal);
+            })
+        // function getObjKeys(results, value) {
+        //     console.log('value', value);
+        //     return Object.keys(results).filter(key => results[key] === userSentence1);
+        // }
+        // console.log(getObjKeys(results, userSentence1));
+
+
+        // .catch ((error) => console.error('Error:', error))
         // Object.entries(sentence).forEach(([key, value]) => {
         //     console.log(`${key} ${value}`);
         // });
@@ -62,7 +78,7 @@ $(document).ready(function () {
         // searchSpotify(emotionResponse);
 
         // )
-        // .catch(err => console.error(err));
+        // .catch (err => console.error(err));
         displayFeelings();
     }
 
@@ -140,26 +156,26 @@ $(document).ready(function () {
         futurePage.css('display', 'flex');
     }
 
-    // function searchSpotify(emotion) {
+    function searchSpotify(emotion) {
 
-    //     const options = {
-    //         method: 'GET',
-    //         headers: {
-    //             'X-RapidAPI-Key': '0a94bcc8f9msh196fd34b25fece6p19d338jsn0a9545969f74',
-    //             'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-    //         }
-    //     };
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '0a94bcc8f9msh196fd34b25fece6p19d338jsn0a9545969f74',
+                'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+            }
+        };
 
-    //     fetch(`https://spotify23.p.rapidapi.com/search/?q=${emotion}&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
-    //         .then(response => response.json())
-    //         .then(response => {
-    //             console.log(response);
-    //             // document.getElementById
-    //         }
+        fetch(`https://spotify23.p.rapidapi.com/search/?q=${emotion}&type=playlists&offset=0&limit=10&numberOfTopResults=5`, options)
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                // document.getElementById
+            }
 
-    //         )
-    //         .catch(err => console.error(err));
-    // }
+            )
+            .catch(err => console.error(err));
+    }
 
     // emotionForm.on('submit', function (event) {
     //     event.preventDefault();
