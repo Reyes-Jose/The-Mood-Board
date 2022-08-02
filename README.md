@@ -1,4 +1,4 @@
-# Module 6 - Traveler's Weather Dashboard
+# The Mood Board
 
 ## Websites:
 
