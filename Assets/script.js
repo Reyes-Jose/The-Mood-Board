@@ -1,18 +1,19 @@
 $(document).ready(function () {
     var startPage = $(".start-container");
-    var feelingsPage = $(".feelings-page");
-    var playlistPage = $(".playlists-page");
     var pastPage = $(".past-page");
     var futurePage = $(".future-page");
     var emotionForm1 = $("#emotion-form1");
-    var btnContainer = $(".btn-container");
-    var form2Container = $(".form2-container");
     var pastDropdown = $(".past");
     var futureDropdown = $(".future");
     var refreshBtn = $(".refresh");
+    var linkContainer = $(".link-container");
+    var playlistLink = $("#hide");
 
     let results = {};
+    let playlistId = "";
     let userSentence1 = "";
+
+   
 
     function searchEmotion(event) {
         event.preventDefault();
@@ -32,8 +33,8 @@ $(document).ready(function () {
             .then((response) => response.json())
             .then((data) => {
 
-                console.log(data.sentence)
-                localStorage.setItem('results', JSON.stringify(data.sentence));
+                //console.log(data.sentence)
+                //localStorage.setItem('results', JSON.stringify(data.sentence));
                 results = data.sentence
                 var topEmotion = "noemo";
                 for (let key in results) {
@@ -43,118 +44,11 @@ $(document).ready(function () {
                 }
                 console.log(topEmotion);
                 searchSpotify(topEmotion);
-                // const keys = Object.keys(results);
-                // console.log('results', results);
-                // const values = keys.map(key => {
-                //     return results[key];
-                // });
-                // console.log('values', values);
-                // var maxVal = Math.max.apply(null, values);
-                // console.log('maxVal', maxVal);
+            
             })
-        // function getObjKeys(results, value) {
-        //     console.log('value', value);
-        //     return Object.keys(results).filter(key => results[key] === userSentence1);
-        // }
-        // console.log(getObjKeys(results, userSentence1));
-
-
-        // .catch ((error) => console.error('Error:', error))
-        // Object.entries(sentence).forEach(([key, value]) => {
-        //     console.log(`${key} ${value}`);
-        // });
-        // Object.values(response.sentence).forEach(values => {
-        //     console.log(values, response.sentence[values]);
-        // });
-
-        // print all keys
-
-        // console.log(keys);
-
-        // keys.forEach((key, index)) => {
-        //     console.log(`${key}: ${response[key]}`);
-        // };
-
-        // searchSpotify(emotionResponse);
-
-        // )
-        // .catch (err => console.error(err));
-        displayFeelings();
-    }
-
-    function displayFeelings() {
-        feelingsPage.css('display', 'flex');
-        startPage.css('display', 'none');
-        playlistPage.css('display', 'none');
-        pastPage.css('display', 'none');
-        futurePage.css('display', 'none');
-    }
-
-    function userDecision(event) {
-
-        var userChoice = $(event.target)
-        console.log($(userChoice).html());
-        if ($(userChoice).html() === 'Yes') {
-            var pEl = $('<p>').text('How would you like to feel?');
-            var form2 = $('<form>').addClass('emotion-form2');
-            var label2 = $('<label>').attr('for', 'user-sentence2');
-            var input2 = $('<input>').attr({
-                type: 'text',
-                placeholder: 'How would you like to feel?',
-                class: 'input is-large',
-                id: 'user-sentence2',
-            });
-
-            var button2 = $('<button>').addClass('button is-medium').text('Submit').attr({
-                type: 'submit',
-                id: 'button-submit',
-            })
-
-
-            form2Container.append(pEl);
-            form2Container.append(form2);
-            form2.append(label2);
-            label2.append(input2);
-            form2.append(button2);
-
-
-        }
-    }
-    function playListColors() {
-
-
-        var choiceEl = $('<p>').text('Choose your colors');
-
-
-
-        var button3 = $('<button>').addClass('button is-medium').text('submit').attr({
-            type: 'button',
-            id: 'color1',
-        });
-
-
-        playlistPage.append(choiceEl);
-        playlistPage.append(button3);
-
-        console.log(choiceEl);
-
-
-    }
-
-    function displayPast() {
-        startPage.css('display', 'none');
-        feelingsPage.css('display', 'none');
-        playlistPage.css('display', 'none');
-        pastPage.css('display', 'flex');
-        futurePage.css('display', 'none');
-    }
-    function displayFuture() {
-        startPage.css('display', 'none');
-        feelingsPage.css('display', 'none');
-        playlistPage.css('display', 'none');
-        pastPage.css('display', 'none');
-        futurePage.css('display', 'flex');
-    }
+        
+        
+    }   
 
     function searchSpotify(emotion) {
 
@@ -169,43 +63,45 @@ $(document).ready(function () {
         fetch(`https://spotify23.p.rapidapi.com/search/?q=${emotion}&type=playlists&offset=0&limit=10&numberOfTopResults=5`, options)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 console.log('data', data);
-                var playlistId = data.playlists.items[0].data.uri.split(":")[2];
-                getPlaylistId(playlistId);
-                console.log('playlistId', playlistId);
-                // document.getElementById
-            }
+                playlistId = data.playlists.items[0].data.uri.split(":")[2];
+                
+                console.log('local playlistId', playlistId);
 
-            )
-            .catch(err => console.error(err));
+                playlistLink.css('display', 'flex').attr({
+                    href: 'https://open.spotify.com/playlist/' + playlistId, 
+                    target: '_blank',
+                })
+    
+                
+            })
+            
+            
+            //.catch(err => console.error(err));
+    }
+    console.log('global playlistId', playlistId);
+
+    function displayPast() {
+        startPage.css('display', 'none');
+        pastPage.css('display', 'flex');
+        futurePage.css('display', 'none');
+    }
+    function displayFuture() {
+        startPage.css('display', 'none');
+        pastPage.css('display', 'none');
+        futurePage.css('display', 'flex');
     }
 
-    function getPlaylistId(playlistId) {
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '0a94bcc8f9msh196fd34b25fece6p19d338jsn0a9545969f74',
-                'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-            }
-        };
+    emotionForm1.on('submit', searchEmotion);
+    //btnContainer.on("click", userDecision);
 
-        fetch('https://spotify23.p.rapidapi.com/playlist_tracks/?id=' + playlistId + '&offset=0&limit=100', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-    }
-    // emotionForm.on('submit', function (event) {
-    //     event.preventDefault();
-    //     console.log("hello");
-    // });
+
     pastDropdown.on('click', displayPast);
     futureDropdown.on('click', displayFuture);
     refreshBtn.on('click', function () {
         location.reload();
     })
 
-    emotionForm1.on('submit', searchEmotion);
 
     //on hover icons "beat"
     $('#beat1').on('mouseover', function () {
@@ -230,10 +126,60 @@ $(document).ready(function () {
     });
 
 
-
-
-    btnContainer.on("click", userDecision);
-    playListColors();
-
-
 })
+    // function userDecision(event) {
+
+    //     var userChoice = $(event.target)
+    //     //console.log($(userChoice).html());
+    //     if ($(userChoice).html() === 'Yes') {
+    //         var pEl = $('<p>').text('How would you like to feel?');
+    //         var form2 = $('<form>').addClass('emotion-form2');
+    //         var label2 = $('<label>').attr('for', 'user-sentence2');
+    //         var input2 = $('<input>').attr({
+    //             type: 'text',
+    //             placeholder: 'How would you like to feel?',
+    //             class: 'input is-large',
+    //             id: 'user-sentence2',
+    //         });
+
+    //         var button2 = $('<button>').addClass('button is-medium').text('Submit').attr({
+    //             type: 'submit',
+    //             id: 'button-submit',
+    //         })
+
+
+    //         form2Container.append(pEl);
+    //         form2Container.append(form2);
+    //         form2.append(label2);
+    //         label2.append(input2);
+    //         form2.append(button2);
+
+
+    //     } else {
+    //         displayPlaylistLink();
+    //     }
+    // }
+
+
+    // function getPlaylistId(playlistId) {
+    //     const options = {
+    //         method: 'GET',
+    //         headers: {
+    //             'X-RapidAPI-Key': '0a94bcc8f9msh196fd34b25fece6p19d338jsn0a9545969f74',
+    //             'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+    //         }
+    //     };
+    
+    //     fetch('https://spotify23.p.rapidapi.com/playlist_tracks/?id=' + playlistId + '&offset=0&limit=100', options)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             console.log(data)
+    //             // for (var i = 0; i < data.length; i++) {
+    //             //     const element = array[index];
+                    
+    //             // }
+    //             // var songName = data.items[i].track.songName
+    //             // var songUrl = data.items[i].track.preview_url
+    //         })
+    //         .catch(err => console.error(err));
+    // }
