@@ -32,7 +32,7 @@ $(document).ready(function () {
             },
             body: `{ "sentence": ${JSON.stringify(userSentence1)} }`
         };
-
+// Resource: EmoDex Emotions Analysis API by KarstenT: https://rapidapi.com/KarstenT/api/emodex-emotions-analysis/
         fetch('https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions', options)
             .then((response) => response.json())
             .then((data) => {
@@ -63,7 +63,7 @@ $(document).ready(function () {
                 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
             }
         };
-
+// Resource: Spotify by Glavier: https://rapidapi.com/Glavier/api/spotify23/
         fetch(`https://spotify23.p.rapidapi.com/search/?q=${emotion}&type=playlists&offset=0&limit=10&numberOfTopResults=5`, options)
             .then((response) => response.json())
             .then((data) => {
