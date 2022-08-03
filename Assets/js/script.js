@@ -78,9 +78,11 @@ $(document).ready(function () {
                 var playlistDate = moment().format('MMMM Do YYYY, h:mm:ss a');
                 var playlistInfo = "On " + playlistDate + " you were recommended: " + fullLink;
                 console.log("playlistInfo", playlistInfo);
+                savedPlaylists = JSON.parse(localStorage.getItem("savedPlaylists"));
                 savedPlaylists.push(playlistInfo);
                 console.log("savedPlaylists", savedPlaylists);
                 
+
                 
                 localStorage.setItem("savedPlaylists", JSON.stringify(savedPlaylists));
 
