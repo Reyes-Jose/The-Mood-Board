@@ -16,6 +16,10 @@ Once this is done, the spotify API returns data that gives us access to a playli
 This link is saved into local storage where a user can access it any time by clicking the brain icon in the navbar or by clicking "Past" in the navbar dropdown menu.
 
 Finally, the user can also click on the heart icon, or click Future from the navbar dropdown menu to see the developer's next steps for the application.
+## Technologies Used:
+The Mood Board uses Bulma as a third-party CSS framework. Most of the elements seen on the website utilize Bulma html elements and helper classes. Also, the Font Awesome website was used for icons found in the application. 
+
+The Javascript uses the jQuery library throughout the script. Finally, the Moment Library was utilized in the "Past Page" of our Web Application to let the user know what date and time a certain past playlist was recommended. 
 
 ## Link to The Mood Board:
 [The Mood Board Web Application](url)
