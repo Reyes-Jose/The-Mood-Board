@@ -22,6 +22,7 @@ TODO
 - Server-Side APIs
 
 [**Demo video**](https://drive.google.com/file/d/1h-LnN2WvXX50bPuzyiTS4hE-2bfpQY3T/view) 🔗
+<img width="1881" alt="Screen Shot 2022-08-02 at 4 20 11 PM" src="https://user-images.githubusercontent.com/42161933/182493996-73dfa3f1-a721-4ffd-96b2-f9b20f924fae.png">
 
 ## Project Requirements:
 
