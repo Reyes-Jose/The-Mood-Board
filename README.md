@@ -24,6 +24,10 @@ The Mood Board uses Bulma as a third-party CSS framework. Most of the elements s
 
 The Javascript uses the jQuery library throughout the script. Finally, the Moment Library was utilized in the "Past Page" of our Web Application to let the user know what date and time a certain past playlist was recommended.
 
+## Link to The Mood Board Demo Video
+
+[The Mood Board Demo Video](https://drive.google.com/file/d/1h-LnN2WvXX50bPuzyiTS4hE-2bfpQY3T/view?usp=sharing)
+
 ## Link to The Mood Board and the GitHub URL:
 
 [The Mood Board Web Application](https://reyes-jose.github.io/The-Mood-Board/)
